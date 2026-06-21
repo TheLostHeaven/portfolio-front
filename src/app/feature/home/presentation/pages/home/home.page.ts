@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { LanguageService } from '@core/i18n/language.service';
 import { getHomeConfig } from '../../../config/home.config';
@@ -10,11 +10,11 @@ import { getHomeConfig } from '../../../config/home.config';
   styleUrl: './home.page.scss',
 })
 export class HomePage implements OnInit, OnDestroy {
+  private languageService = inject(LanguageService);
+
   config = getHomeConfig(this.languageService.currentLang);
 
   private langSub!: Subscription;
-
-  constructor(private languageService: LanguageService) {}
 
   ngOnInit(): void {
     this.langSub = this.languageService.lang$.subscribe((lang) => {

@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { LanguageService } from '@core/i18n/language.service';
 import { getNavBarConfig } from './config/nav-bar.config';
@@ -10,12 +10,12 @@ import { getNavBarConfig } from './config/nav-bar.config';
   styleUrl: './nav-bar.scss',
 })
 export class NavBar implements OnInit, OnDestroy {
+  private languageService = inject(LanguageService);
+
   config = getNavBarConfig(this.languageService.currentLang);
   currentLang = this.languageService.currentLang;
 
   private langSub!: Subscription;
-
-  constructor(private languageService: LanguageService) {}
 
   ngOnInit(): void {
     this.langSub = this.languageService.lang$.subscribe((lang) => {
