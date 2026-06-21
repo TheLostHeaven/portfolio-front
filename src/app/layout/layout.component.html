@@ -5,10 +5,29 @@
   <div class="layout__nav">
     <app-nav-bar></app-nav-bar>
   </div>
+  <div class="layout__version-top">
+    <span class="layout__version-text">⟨ V1.0.0 ⟩</span>
+  </div>
   <div class="layout__line">
+    <div class="layout__left-info">
+      <span class="layout__left-title">MARATHON NETWORK</span>
+      <span class="layout__left-date">{{ currentDate }}</span>
+      <span class="layout__left-time">{{ currentTime }}</span>
+    </div>
   </div>
   <div class="layout__content">
     <router-outlet></router-outlet>
     <!-- <app-footer></app-footer> -->
+  </div>
+  <div class="layout__line-right">
+    <div class="layout__matrix-rain">
+      <span class="layout__matrix-column" *ngFor="let col of matrixColumns">
+        <span class="layout__matrix-char" *ngFor="let char of col.chars; let i = index"
+              [style.animation-delay]="i * 0.1 + 's'"
+              [style.opacity]="col.opacities[i]">
+          {{ char }}
+        </span>
+      </span>
+    </div>
   </div>
 </div>
