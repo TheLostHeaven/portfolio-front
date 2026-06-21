@@ -1,0 +1,11 @@
+<span class="title">{{ config.i18n.brand }}</span>
+
+<ol>
+    <li *ngFor="let link of config.i18n.links">
+        {{ link.label }}
+    </li>
+</ol>
+
+<button class="lang-toggle" (click)="switchLanguage()">
+    {{ currentLang === 'es' ? 'EN' : 'ES' }}
+</button>
