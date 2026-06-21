@@ -1,4 +1,4 @@
-import { Component, OnDestroy, afterNextRender } from '@angular/core';
+import { Component, OnDestroy, afterNextRender, ChangeDetectorRef, inject } from '@angular/core';
 
 interface MatrixColumn {
   chars: string[];
@@ -12,6 +12,8 @@ interface MatrixColumn {
   styleUrl: './layout.component.scss',
 })
 export class LayoutComponent implements OnDestroy {
+  private cdr = inject(ChangeDetectorRef);
+
   matrixColumns: MatrixColumn[] = [];
   currentDate = '';
   currentTime = '';
@@ -30,13 +32,16 @@ export class LayoutComponent implements OnDestroy {
 
     afterNextRender(() => {
       this.updateClock();
+      this.cdr.detectChanges();
 
       this.intervalId = setInterval(() => {
         this.updateColumns();
+        this.cdr.detectChanges();
       }, 400);
 
       this.clockIntervalId = setInterval(() => {
         this.updateClock();
+        this.cdr.detectChanges();
       }, 1000);
     });
   }
