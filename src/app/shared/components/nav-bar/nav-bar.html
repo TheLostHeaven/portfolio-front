@@ -1,11 +1,39 @@
-<span class="title">{{ config.i18n.brand }}</span>
+<nav class="nav-bar">
+  <div class="nav-bar__top">
+    <div class="nav-bar__left">
+      <div class="nav-bar__line">
+        <img src="assets/line-header.svg" alt="line-header">
+      </div>
+      <span class="nav-bar__brand">{{ config.i18n.brand }}</span>
+      <button class="nav-bar__lang" (click)="switchLanguage()">
+        {{ currentLang === 'es' ? 'EN' : 'ES' }}
+      </button>
+    </div>
 
-<ol>
-    <li *ngFor="let link of config.i18n.links">
+    <ul class="nav-bar__links">
+      <li *ngFor="let link of config.i18n.links">
         {{ link.label }}
-    </li>
-</ol>
+      </li>
+    </ul>
 
-<button class="lang-toggle" (click)="switchLanguage()">
-    {{ currentLang === 'es' ? 'EN' : 'ES' }}
-</button>
+    <div class="nav-bar__right">
+      <div class="nav-bar__status">
+        <span class="nav-bar__status-label">{{ config.i18n.status.label }}</span>
+        <span class="nav-bar__status-value">
+          {{ config.i18n.status.value }} <span class="nav-bar__dot"></span>
+        </span>
+      </div>
+      <div class="nav-bar__info">
+        <span class="nav-bar__info-title">{{ config.i18n.planet }}</span>
+        <span class="nav-bar__info-sector">{{ config.i18n.sector }}</span>
+      </div>
+      <div class="nav-bar__logo-planet">
+        <img src="assets/planet.svg" alt="line-header">
+      </div>
+    </div>
+  </div>
+
+  <div class="nav-bar__bottom">
+    <div class="nav-bar__border-line"></div>
+  </div>
+</nav>

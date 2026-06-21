@@ -26,7 +26,8 @@
       "@environments/*": ["src/environments/*"],
       "@shared/*": ["src/app/shared/*"],
       "@core/*": ["src/app/core/*"],
-      "@auth/*": ["src/app/features/auth/*"]
+      "@assets/*":["src/assets/*"],
+      "@auth/*": ["src/app/features/auth/*"],
       //"@example/*": ["src/app/features/name-feature/*"]
     }
   },

@@ -1,6 +1,12 @@
 export const navBarConfigEn = Object.freeze({
   i18n: {
     brand: 'PORTFOLIO://DM',
+    status: {
+      label: 'SYSTEM STATUS',
+      value: 'ONLINE',
+    },
+    sector: 'SECTOR 09 / ZONE A',
+    planet: 'TAU CETI IV',
     links: [
       { label: '01_HOME', route: '/home' },
       { label: '02_PROJECTS', route: '/projects' },
