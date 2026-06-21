@@ -1,4 +1,5 @@
 import { Component, OnDestroy, afterNextRender, ChangeDetectorRef, inject } from '@angular/core';
+import packageJson from '../../../package.json';
 
 interface MatrixColumn {
   chars: string[];
@@ -14,6 +15,7 @@ interface MatrixColumn {
 export class LayoutComponent implements OnDestroy {
   private cdr = inject(ChangeDetectorRef);
 
+  appVersion = packageJson.version;
   matrixColumns: MatrixColumn[] = [];
   currentDate = '';
   currentTime = '';
