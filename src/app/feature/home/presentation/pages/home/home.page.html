@@ -1,3 +1,65 @@
-<!-- <h1>{{ config.i18n.title }}</h1>
-<p>{{ config.i18n.subtitle }}</p>
-<p>{{ config.i18n.description }}</p> -->
+<section class="home">
+  <!-- Corner decorators -->
+  <div class="home__corner home__corner--top-left"></div>
+  <div class="home__crosshair home__crosshair--1">+</div>
+  <div class="home__crosshair home__crosshair--2">+</div>
+
+  <!-- Hero grid: content left, planet right -->
+  <div class="home__hero">
+    <div class="home__hero-content">
+      <!-- Node ID -->
+      <span class="home__node-id">{{ config.i18n.nodeId }}</span>
+
+      <!-- Name -->
+      <h1 class="home__name">
+        <span class="home__first-name">{{ config.i18n.firstName }}</span>
+        <span class="home__last-name">{{ config.i18n.lastName }}</span>
+      </h1>
+
+      <!-- Subtitle -->
+      <h2 class="home__subtitle">{{ config.i18n.subtitle }}</h2>
+
+      <!-- Technologies -->
+      <div class="home__technologies">
+        @for (tech of config.i18n.technologies; track tech; let last = $last) {
+          <span class="home__tech">{{ tech }}</span>
+          @if (!last) {
+            <span class="home__tech-separator">•</span>
+          }
+        }
+      </div>
+
+      <!-- Description -->
+      <p class="home__description">{{ config.i18n.description }}</p>
+
+      <!-- CTA Buttons -->
+      <div class="home__cta">
+        <button class="home__btn home__btn--primary">
+          {{ config.i18n.cta.portfolio }}
+        </button>
+        <button class="home__btn home__btn--secondary">
+          {{ config.i18n.cta.cv }}
+        </button>
+      </div>
+    </div>
+
+    <!-- Planet image -->
+    <div class="home__hero-visual">
+      <img src="assets/taucetiiv.jpg" alt="Tau Ceti IV" class="home__planet-img">
+    </div>
+  </div>
+
+  <!-- Location Section -->
+  <div class="home__location">
+    <span class="home__location-label">{{ config.i18n.location.label }}</span>
+    <h3 class="home__location-name">{{ config.i18n.location.name }}</h3>
+    <div class="home__location-coords">
+      <span>X: {{ mouseX }}</span>
+      <span>Y: {{ mouseY }}</span>
+      <span>Z: {{ mouseZ }}</span>
+    </div>
+    <span class="home__location-detail">{{ config.i18n.location.orbitalDistance }}</span>
+    <span class="home__location-detail">{{ config.i18n.location.environment }}</span>
+    <p class="home__location-lore">{{ config.i18n.location.lore }}</p>
+  </div>
+</section>

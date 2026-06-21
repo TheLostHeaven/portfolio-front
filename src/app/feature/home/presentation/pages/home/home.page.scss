@@ -1,0 +1,287 @@
+.home {
+  position: relative;
+  padding: 3rem 4rem;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  // Corner bracket top-left
+  &__corner--top-left {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    width: 20px;
+    height: 20px;
+    border-top: 1px solid #3a3a3a;
+    border-left: 1px solid #3a3a3a;
+  }
+
+  // Crosshair decorators
+  &__crosshair {
+    position: absolute;
+    color: #3a3a3a;
+    font-size: 14px;
+    font-family: 'Space Grotesk', monospace;
+    user-select: none;
+
+    &--1 {
+      top: 2rem;
+      right: 30%;
+    }
+
+    &--2 {
+      top: 2rem;
+      right: 10%;
+    }
+  }
+
+  // Hero grid
+  &__hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  &__hero-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__hero-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__planet-img {
+    width: 130%;
+    height: auto;
+    object-fit: contain;
+    background: transparent;
+    filter: brightness(0.8) contrast(1.1);
+    animation: planetFloat 6s ease-in-out infinite;
+    transform: translateX(-25%);
+  }
+
+  // Node ID
+  &__node-id {
+    font-family: 'Space Grotesk', monospace;
+    font-size: 0.75rem;
+    color: #ff4400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+
+  // Name
+  &__name {
+    display: flex;
+    flex-direction: column;
+    line-height: 0.9;
+    margin-bottom: 2rem;
+  }
+
+  &__first-name,
+  &__last-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(4rem, 8vw, 8rem);
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: -2px;
+    text-transform: uppercase;
+  }
+
+  // Subtitle
+  &__subtitle {
+    font-family: 'Space Grotesk', monospace;
+    font-size: 1.1rem;
+    color: #d4a017;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+  }
+
+  // Technologies
+  &__technologies {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  &__tech {
+    font-family: 'Space Grotesk', monospace;
+    font-size: 0.8rem;
+    color: #9a9a9a;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  &__tech-separator {
+    color: #5a5a5a;
+    font-size: 0.6rem;
+  }
+
+  // Description
+  &__description {
+    font-family: 'Space Grotesk', monospace;
+    font-size: 0.8rem;
+    color: #7a7a7a;
+    letter-spacing: 1.5px;
+    line-height: 1.8;
+    text-transform: uppercase;
+    white-space: pre-line;
+    margin-bottom: 2.5rem;
+  }
+
+  // CTA Buttons
+  &__cta {
+    display: flex;
+    gap: 1rem;
+  }
+
+  &__btn {
+    font-family: 'Space Grotesk', monospace;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 0.9rem 2rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: transparent;
+
+    &--primary {
+      background-color: #c8e600;
+      color: #000000;
+      border: 1px solid #c8e600;
+      font-weight: 700;
+
+      &:hover {
+        background-color: #deff1a;
+        box-shadow: 0 0 12px rgba(200, 230, 0, 0.3);
+      }
+    }
+
+    &--secondary {
+      background-color: transparent;
+      color: #ffffff;
+      border: 1px solid #ff4400;
+
+      &:hover {
+        background-color: rgba(255, 68, 0, 0.1);
+        box-shadow: 0 0 12px rgba(255, 68, 0, 0.2);
+      }
+    }
+  }
+
+  // Location Section
+  &__location {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-top: 3rem;
+    margin-top: 3rem;
+    border-top: 1px solid #1a1a1a;
+  }
+
+  &__location-label {
+    font-family: 'Space Grotesk', monospace;
+    font-size: 0.7rem;
+    color: #5a5a5a;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  &__location-name {
+    font-family: 'Space Grotesk', monospace;
+    font-size: 1.8rem;
+    color: #4ecdc4;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  &__location-coords {
+    display: flex;
+    gap: 1.5rem;
+    font-family: 'Space Grotesk', monospace;
+    font-size: 0.8rem;
+    color: #abb2bf;
+    letter-spacing: 1px;
+
+    span {
+      background: transparent;
+    }
+  }
+
+  &__location-detail {
+    font-family: 'Space Grotesk', monospace;
+    font-size: 0.75rem;
+    color: #7a7a7a;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  &__location-lore {
+    font-family: 'Space Grotesk', monospace;
+    font-size: 0.75rem;
+    color: #4ecdc4;
+    letter-spacing: 1px;
+    line-height: 1.8;
+    white-space: pre-line;
+    margin-top: 0.5rem;
+    opacity: 0.8;
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .home {
+    padding: 2rem 1.5rem;
+
+    &__hero {
+      grid-template-columns: 1fr;
+    }
+
+    &__hero-visual {
+      order: -1;
+    }
+
+    &__planet-img {
+      max-width: 300px;
+    }
+
+    &__first-name,
+    &__last-name {
+      font-size: clamp(2.5rem, 15vw, 5rem);
+    }
+
+    &__technologies {
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    &__cta {
+      flex-direction: column;
+    }
+
+    &__location-coords {
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+  }
+}
+
+@keyframes planetFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
